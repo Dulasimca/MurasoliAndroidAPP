@@ -1,0 +1,56 @@
+<div class="col-12 md:col-12 lg:col-12 txt-ctr no-pad-btm">
+    <div fxLayout fxFlexFill fxLayoutAlign="center center">
+        <div class="col-12 md:col-6 lg:col-6 no-pad">
+            <!-- <img src="assets/images/header/kalaingar.png"  /> -->
+            <!-- <img src="assets/images/header/murasoli.png" /> -->
+            <!-- <img src="assets/images/header/stalin.png" fxHide.xs /> -->
+            <img src="assets/images/header/murasoli-new.jpg" style="width: 60%;"
+                [ngStyle.xs]="{'width': '-webkit-fill-available'}" />
+        </div>
+    </div>
+        <div>
+            <div style="font-size: 12px;text-align: center;margin-top: -.5rem;">
+                <span> <b>{{day}}, </b></span>
+                <span><b>{{dateToday | date}}</b></span>
+            </div>
+        </div>
+        <div style="margin-top: -1.5rem;"[ngStyle.xs]="{'margin-top': '0rem'}" [ngStyle.sm]="{'margin-top': '-0.5rem'}">
+            <div style="text-align: end !important;padding-right: 2rem;" [ngStyle.xs]="{'padding-right': '0.5rem'}">
+                <span>
+                    <a href="https://www.facebook.com/murasoli180" target="_blank">
+                    <!-- <i class="pi pi-fw pi-facebook" style="color: blue; font-size: 1.5rem"></i> -->
+                    <img src="assets/images/header/facebook.png"/>
+                </a>
+                </span>
+                <span>
+                    <a href="https://www.youtube.com/murasoli180" target="_blank">
+                        <i class="pi pi-fw pi-youtube" style="color: rgb(253, 27, 27); font-size: 1.5rem"></i>
+                    </a>
+                </span>
+                <span>
+                    <a href="https://www.twitter.com/murasoli180" target="_blank">
+                        <i class="pi pi-fw pi-twitter" style="color: deepskyblue; font-size: 1.5rem"></i>
+                        </a>
+                </span>
+                <span>
+                    <a href="https://www.instagram.com/murasoli180" target="_blank">
+                        <!-- <i class="pi pi-fw pi-instagram" style="color: rgb(248, 98, 148); font-size: 1.5rem"></i> -->
+                        <img src="assets/images/header/instagram.png"/>&nbsp;
+                    </a>
+                </span>
+                <span>
+                    <a #mail [href]="href" (click)="share('_MA')" target="_blank">
+                        <!-- <i class="pi pi-fw pi-envelope" style="color: rgb(235, 8, 8); font-size: 1.5rem"></i> -->
+                        <img src="assets/images/header/gmail.png"/>
+                    </a>
+                </span>
+                <span>
+                        <!-- <i class="pi pi-fw pi-globe" style="color: rgb(47, 144, 242); font-size: 1.35rem"></i>
+                        : <span style="font-size: 14px;color: #544c4c;"><b>
+                            <a href="https://www.murasoli.in/" target="_blank" style="color: rgb(47, 144, 242);
+                            text-decoration: underline !important;">www.murasoli.in</a>
+                        </b></span> -->
+                </span>
+            </div>
+        </div>
+</div>

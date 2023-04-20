@@ -1,0 +1,48 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<div #capture id="capture" class="col-12 md:col-12 lg:col-12">
+    <div class="bar-dark"></div>
+    <div class="grid grid-center">
+        <div #rows class="col-12 md:col-12 lg:col-12 no-pad-top">
+            <div>
+                <span>
+                    <h3>{{headLine}}</h3>
+                </span>
+            </div>
+            <div class="col-12 bdr-horizontal-light"></div>
+            <div *ngIf="hasImg" class="grid grid-center">
+                <div class="col-11 md:col-10 lg:col-8">
+                    <img [src]="imgSrc" style="width: -webkit-fill-available !important;height: 180px;" />
+                </div>
+            </div>
+            <div *ngIf="hasImg" class="col-12 bdr-horizontal-light"></div>
+            <div class="col-12 no-pad-top no-pad-btm txt-small" style="text-align: start;">
+                <div class="grid">
+                    <div class="col-12 md:col-4 lg:col-4 no-pad" style="text-align: left !important;">
+                       <span style="color: #2e2a2ade;font-size: 13px;"><b>{{paperTitle}}</b></span> &nbsp; | &nbsp; {{incidentDate}}
+                    </div>
+                    <div class="col-12 md:col-5 lg:col-5 no-pad" style="text-align: center !important;margin-left:-.75rem">
+                        <span>
+                            <i class="pi pi-fw pi-facebook" style="font-size: 1.28rem;color: #365899;" (click)="share('_FB')"></i>
+                            <i class="pi pi-fw pi-twitter" style="font-size: 1.28rem;color: #1d9bf0;" (click)="share('_TW')"></i>
+                            <a #mail [href]="href" (click)="share('_MA')" target="_blank">
+                                <i class="pi pi-fw pi-envelope" style="font-size: 1.28rem;color: #ec2a2ade;">
+                                </i>
+                            </a>
+                            <i class="pi pi-fw pi-whatsapp" style="font-size: 1.28rem;color: #449e48;" (click)="share('_WA')"></i>
+                            <i class="pi pi-fw pi-send" style="font-size: 1.28rem;color: #1a8ad5;" (click)="share('_TG')"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 bdr-horizontal-light"></div>
+            <div class="grid grid-center">
+                <div class="col-10 news-content-small no-pad" [innerHTML]="newsDetail">
+                </div>
+            </div>
+            <div>
+                <img [src]=""/>
+            </div>
+        </div>
+    </div>
+</div>

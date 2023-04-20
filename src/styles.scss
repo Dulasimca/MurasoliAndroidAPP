@@ -1,0 +1,377 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("../node_modules/primeicons/primeicons.css");
+@import url("../node_modules/primeng/resources/themes/saga-green/theme.css");
+@import url("../node_modules/primeng/resources/primeng.min.css");
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0 !important;
+    // background: #a00000 !important;
+    background: #3c3939 !important;
+    font: normal 17px/26px Roboto, Arial, sans-serif; // font-family: sans-serif !important;
+    overflow-x: hidden;
+}
+
+h3 {
+    margin-block-start: .5em !important;
+    margin-block-end: .5em !important;
+}
+
+p {
+    margin-block-start: .5em !important;
+    margin-block-end: .5em !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.txt-ctr {
+    text-align: center !important;
+}
+
+.no-pad {
+    padding: 0 !important;
+}
+
+.no-pad-top {
+    padding-top: 0 !important;
+}
+
+.no-pad-lft {
+    padding-left: 0 !important;
+}
+
+.no-pad-rgt {
+    padding-right: 0 !important;
+}
+
+.no-pad-btm {
+    padding-bottom: 0 !important;
+}
+
+.grid-center {
+    display: flex;
+    justify-content: center;
+}
+
+.box-shadow {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.news-title {
+    font-size: 15px;
+    font-weight: 600;
+    overflow-wrap: break-word;
+}
+
+.txt-small {
+    font-size: 11px;
+    white-space: pre;
+    color: grey;
+}
+
+.news-content-smaller {
+    font-weight: 400;
+    font-size: 12.5px;
+    line-height: 20px;
+}
+
+.news-content-small {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.bar-dark {
+    background: black;
+    height: 2px;
+    margin-bottom: 5px;
+}
+
+.bar-light {
+    background: #c7c0c0;
+    height: 1px;
+    margin-bottom: 5px;
+}
+
+.bdr-vertical-light {
+    border-right: 1px solid rgb(211, 211, 211);
+}
+
+.bdr-vertical-light-lt {
+    border-left: 1px solid rgb(211, 211, 211);
+}
+
+.bdr-horizontal-light {
+    border-top: 1px solid rgb(211, 211, 211);
+}
+
+.breaking-news {
+    background: #b90909;
+    color: white;
+    font-weight: 600;
+}
+
+.breaking-news-content {
+    background: #333;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+// ::-webkit-scrollbar {
+//     width: 2px;
+//   }
+//   ::-webkit-scrollbar-track {
+//     box-shadow: inset 0 0 5px grey;
+//     border-radius: 10px;
+//   }
+//   ::-webkit-scrollbar-thumb {
+//     background: rgb(189, 189, 189);
+//     border-radius: 5px;
+//   }
+
+/// ------------ primeng styles ------------------
+/// 
+
+///menu
+.p-menubar {
+    padding: 0 !important;
+    // background: #333 !important;
+    background: #b90909 !important;
+    border: 2px solid #a70505 !important;
+}
+
+// .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+//     border-bottom: 0.2px solid #540101 !important;
+// }
+.p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link .p-menuitem-text {
+    // color: #ddd9d9 !important;
+    color: #f4efeffe !important;
+    font-weight: 500 !important;
+    font-size: 14px;
+}
+
+.p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link .p-submenu-icon {
+    font-weight: 500 !important;
+    color: #f4efeffe !important;
+    margin-right: 0.25rem !important;
+    // color: #ddd9d9 !important;
+}
+
+.p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link .p-menuitem-icon {
+    font-weight: 500 !important;
+    color: rgb(248, 243, 243) !important;
+    margin-right: 0.25rem !important;
+    // color: #ddd9d9 !important;
+}
+
+.p-menubar .p-menubar-button {
+    font-weight: 500 !important;
+    color: #f4efeffe !important;
+    // color: #ddd9d9 !important;
+}
+
+.p-menubar .p-menubar-button {
+    width: 2.8rem !important;
+    height: 2.8rem !important;
+}
+
+.p-menubar .p-menubar-root-list {
+    // background: #333 !important;
+    background: #b90909 !important;
+}
+
+.p-menubar .p-menubar-button:hover {
+    font-weight: 500 !important;
+    color: #f4efeffe !important;
+    // color: #ddd9d9 !important;
+    background: transparent !important;
+}
+
+.p-menubar .p-menubar-button:focus {
+    box-shadow: 0 0 0 0.1rem #db0a0a !important;
+}
+
+.p-menubar .p-menubar-root-list>.p-menuitem.p-menuitem-active>.p-menuitem-link,
+.p-menubar .p-menubar-root-list>.p-menuitem.p-menuitem-active>.p-menuitem-link:not(.p-disabled):hover {
+    background: #eb0000 !important;
+    // background: #d40505 !important;
+    // background: #262626 !important;
+}
+
+.p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link:not(.p-disabled):hover {
+    background: #eb0000 !important;
+    // background: #d40505 !important;
+    // background: #262626 !important;
+}
+
+.p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link:focus {
+    box-shadow: inset 0 0 0 0.15rem #db0a0a !important;
+}
+
+.p-menubar .p-submenu-list {
+    // background: #333 !important;
+    background: #b90909 !important;
+}
+
+.p-menubar .p-menuitem-link .p-menuitem-text {
+    font-weight: 500 !important;
+    color: #f4efeffe !important;
+    font-size: 14px;
+    // color: #ddd9d9 !important;
+}
+
+.p-menubar .p-menuitem-link .p-menuitem-icon {
+    font-weight: 500 !important;
+    color: #f4efeffe !important;
+    // color: #ddd9d9 !important;
+}
+
+.p-menubar .p-menuitem.p-menuitem-active>.p-menuitem-link {
+    // background: #b90909 !important;
+    // background: #333 !important;
+    background: #eb0000 !important;
+    border: 1px solid #b90909 !important; 
+}
+
+.p-menubar .p-menuitem-link:not(.p-disabled):hover {
+    // background: #b90909 !important;
+    // background: #333 !important;
+    background: #eb0000 !important;
+    // border: 1px solid #b90909 !important; 
+}
+.p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link {
+    // background: #b90909 !important;
+    background: #eb0000 !important;
+}
+
+.p-menubar .p-menuitem-link:focus {
+    box-shadow: inset 0 0 0 0.15rem #db0a0a !important;
+}
+
+.p-menubar .p-menuitem-link {
+    padding: 0.5rem !important;
+}
+
+.p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link {
+    border-radius: 0 !important;
+    // border-right: 1px solid black !important;
+}
+
+.p-menubar-button>.pi {
+    font-size: 1.5rem !important;
+}
+
+/// dropdown
+.p-dropdown .p-dropdown-label {
+    padding: .25rem !important;
+}
+
+.p-dropdown:not(.p-disabled):hover {
+    border-color: #b90909 !important;
+}
+
+.p-dropdown:not(.p-disabled).p-focus {
+    border-color: #b90909 !important;
+    box-shadow: 0 0 0 0.1rem #f85b5b !important;
+}
+.p-inputtext:enabled:focus {
+    box-shadow: 0 0 0 .15rem #f85b5b !important;
+    border-color: #b90909 !important;
+    // border: 2px solid #18A558 !important;
+}
+.p-inputtext:enabled:hover {
+    border-color: #b90909 !important;
+}
+.p-datepicker .p-datepicker-header .p-datepicker-prev:focus, .p-datepicker .p-datepicker-header .p-datepicker-next:focus {
+    box-shadow: 0 0 0 0.2rem #f85b5b !important;
+}
+.p-datepicker table td > span:focus {
+    box-shadow: 0 0 0 0.2rem #f85b5b !important;
+}
+.p-datepicker table td.p-datepicker-today > span {
+    font-weight: 500 !important;
+    background: #b90909 !important;
+    color: #1e1e20 !important;
+    font-size: 18px !important;
+}
+.p-datepicker table td > span.p-highlight {
+    background: #ffcece !important;
+}
+.p-button {
+    color: #000000 !important;
+    background: #b90909 !important;
+    border: 1px solid #383636 !important;
+}
+.p-button:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem #f85b5b !important;
+}
+.ng2-pdf-viewer-container {
+    overflow-x: hidden !important;
+}
+.p-datepicker table td {
+    padding: 0.05rem !important;
+}
+.p-datepicker .p-datepicker-header {
+    padding: 0 !important;
+}
+
+.p-speeddial-button.p-button.p-button-icon-only .p-button-icon {
+    font-size: 1rem !important;
+}
+.p-speeddial-button.p-button.p-button-icon-only {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+}
+.p-speeddial-list {
+    margin: 0.5rem 0 !important;
+}
+ngx-extended-pdf-viewer #toolbarViewer {
+    min-height: 32px;
+    background: #1f1e1e !important;
+}
+ngx-extended-pdf-viewer .html .toolbar *, ngx-extended-pdf-viewer .html .treeItem * {
+    color: #d5d5d6;
+}
+ngx-extended-pdf-viewer .html .toolbarField.pageNumber {
+    color: #000000 !important;
+    // background: #000000 !important;
+    // color:#000000 !important;
+}
+ngx-extended-pdf-viewer select {
+    color: #000000 !important;
+    background-color: #000000 !important;
+    // color:#000000 !important;
+}
+
+.p-tabview .p-tabview-nav .p-tabview-ink-bar {
+     background-color: #a70505 !important;
+    }
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    background: #a70505 !important;
+    border-top-right-radius: 25px !important;
+    border-color: #000000;
+    color: #d5d5d6 !important;
+}
+.app-footer {
+    padding: 0 !important;
+    // background: #333 !important;
+    background: #b90909 !important;
+    border: 2px solid #a70505 !important;
+}
+
+
+
+

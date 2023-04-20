@@ -1,0 +1,66 @@
+<app-header></app-header>
+<app-menu></app-menu>
+
+<div class="col-12 md:col-12 lg:col-12">
+    <div class="bar-dark"></div>
+    
+    <div #rows class="col-12 md:col-12 lg:col-12">
+        <div>
+            <span><b>{{title}}</b></span>
+        </div>
+        <p-toast position="top-center" key="t-msg"></p-toast>
+        <div class="col-12 bdr-horizontal-light"></div>
+        <div class="col-12 no-pad-top">
+            <p-dropdown [options]="districtOptions" [(ngModel)]="district" placeholder="அனைத்து மாவட்டங்கள்"
+                (onClick)="onSelectDistrict()" (onChange)="onChangeDistrict()" optionLabel="label"></p-dropdown>
+        </div>
+<!--         
+        <div class="col-12 bdr-horizontal-light"></div>
+        <div class="grid grid-center cursor" *ngFor="let i of data" (click)="onNavigate(i)">
+            <div class="col-6 md:col-9 lg:col-9">
+                <div class="news-title"> <span> {{i.headLine}} </span> </div>
+                <div class="news-content-small no-pad-rgt">
+                    <p>{{i.newsShort}}</p>
+                    <div class="txt-small">{{i.incidentDate}}</div>
+                </div>
+            </div>
+            <div class="col-6 md:col-2 lg:col-2 no-pad-top no-pad-lft">
+                <img *ngIf="i.hasImg" [src]="i.imgURL" style="width: -webkit-fill-available !important;" /> -->
+                <!-- <div class="txt-small">{{i.incidentDate}}</div> -->
+            <!-- </div>
+            <div class="col-12 bdr-horizontal-light"></div>
+        </div> -->
+
+        <div class="grid">
+            <div #col1 class="col-12 md:col-3 lg:col-3 no-pad-lft bdr-vertical-light">
+                <div class="col-12 md:col-12 lg:col-12 no-pad-top no-pad-btm">
+                    <div class="col-12 no-pad cursor" *ngFor="let i of data" style="margin-bottom: -0.7rem;" (click)="onNavigate(i)">
+                        <div class="news-title">
+                            <span> {{i.headLine}} </span>
+                        </div>
+                        <div class="grid">
+                            <div class="col-7 no-pad-top news-content-smaller no-pad-rgt">
+                                <p>{{i.newsShort}}</p>
+                            </div>
+                            <div class="col-5 no-pad-btm no-pad-lft">
+                                <img *ngIf="i.hasImg" [src]="i.imgURL" style="width: -webkit-fill-available !important;" />
+                                <div class="txt-small">{{i.incidentShortDate}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+
+
+        <div class="col-12" style="text-align: center;">
+            <i class="pi pi-fw pi-angle-double-left" (click)="goto('F')"></i>
+            <i class="pi pi-fw pi-angle-left" (click)="goto('P')"></i>
+            <input class="col-1" name="_timelimit" type="text" [(ngModel)]="pageNo" readonly pInputText
+            style="text-align: center;width: 50px;">
+            <i class="pi pi-fw pi-angle-right" (click)="goto('N')"></i>
+            <i class="pi pi-fw pi-angle-double-right" (click)="goto('L')"></i>
+        </div>
+    </div>
+</div>

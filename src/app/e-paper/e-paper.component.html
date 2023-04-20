@@ -1,0 +1,39 @@
+<div class="col-12 md:col-12 lg:col-12 no-pad-lft no-pad-rgt">
+  <app-menu></app-menu>
+</div>
+<div class="col-12 md:col-12 lg:col-12">
+  <!-- <div class="bar-dark"></div> -->
+  <p-toast position="top-center" key="t-msg"></p-toast>
+  <div class="col-12 no-pad">
+    <div class="grid grid-center">
+      <div class="col-12 md:col-4 lg:col-2">
+        <span class="p-float-label">
+          <p-calendar name="_judgementdate" [showIcon]="true" [(ngModel)]="date" (ngModelChange)="loadPDF()"></p-calendar>
+        </span>
+      </div>
+      <div class="col-12 md:col-4 lg:col-2">
+        <p-dropdown [options]="districtOptions" [(ngModel)]="district" placeholder="மாவட்டங்கள்"
+          (onClick)="onSelectDistrict()" (onChange)="loadPDF()"></p-dropdown>
+      </div>
+      <div class="col-12 md:col-4 lg:col-7" style="display: flex;justify-content: end;">
+        <p-speedDial [model]="items" direction="down" showIcon="pi pi-share-alt" hideIcon="pi pi-times"
+        ></p-speedDial>
+      </div>
+    </div>
+  </div>
+  <div class="bar-dark"></div>
+  <div class="grid grid-center">
+    <div class="col-12 md:col-11 lg:col-11 pdf-container">
+      <!-- <pdf-viewer [src]="src" [rotation]="0" [original-size]="false" [show-all]="true" [fit-to-page]="false" [zoom]="1"
+        [zoom-scale]="'page-width'" [stick-to-page]="false" [render-text]="true" [external-link-target]="'blank'"
+        [render-text-mode]="1" [autoresize]="true" [show-borders]="false" style="width: 100%; height: 600px;"></pdf-viewer> -->
+      <ngx-extended-pdf-viewer [src]="src" [useBrowserLocale]="true" [sidebarVisible]="true"
+      [textLayer]="true"  (pageChange)="pageChange($event)"
+      [showHandToolButton]="true"
+      > </ngx-extended-pdf-viewer>
+      <!-- <div>
+        <iframe width="100%" height="100%" frameBorder="0" src="../../assets/files/sapmle.indd"></iframe>
+      </div> -->
+    </div>
+  </div>
+</div>
