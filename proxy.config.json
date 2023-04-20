@@ -1,0 +1,12 @@
+{
+  "/api/*": {
+      "target": "https://murasoliapi.devtesting.in/api",     
+      "secure": true,
+      "logLevel": "info"
+  },
+"/myotherapp/*": {
+      "target": "https://murasoli.devtesting.in",    
+      "secure": true,
+      "logLevel": "info"
+  }
+}
