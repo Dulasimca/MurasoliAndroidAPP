@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataSharingService } from '../services/data-sharing.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  href: string = '';
+  headLine: string = '';
+  
+  constructor(private _dataSharing: DataSharingService) { }
 
   ngOnInit(): void {
+  }
+
+  share(type: string) {
+    const shareUrl = window.location.href;
+    let returnValue = null;
+    if (type === '_MA') {
+      this.href = 'mailto:?subject=' + 'Murasoli' + '&body=Check out this -' + 'www.murasoli.in';
+      returnValue = null;
+    } else {
+      returnValue = this._dataSharing.shareNews(type, shareUrl);
+    }
+    return returnValue;
   }
 
 }

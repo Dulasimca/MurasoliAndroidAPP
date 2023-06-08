@@ -10,4 +10,5 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <preference name="loadUrlTimeoutValue" value="700000" />
 </widget>

@@ -1,0 +1,30 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<div class="col-12">
+  <p-panel>
+    <ng-template pTemplate="header" style="margin-left: 2%;">
+    
+        <p-calendar style="background-color: rgb(255, 255, 255);" name="_date" [(ngModel)]="Date" (ngModelChange)="onView()" [readonlyInput]="false"
+        [showIcon]="true" [autoZIndex]="true"></p-calendar>&nbsp;
+        தலையங்கம்
+      </ng-template>
+  <p-toast position="top-center" key="t-msg"></p-toast>
+  <div class="grid no-gutter">
+    <div class="col-12 no-pad">
+    <div class="col-2" style="float: left">
+        <img src="assets/images/news/kalaignar.png" style="width: -webkit-fill-available !important;"/>
+    </div>
+    <div class="col-12">
+    <div *ngIf="loader" style="text-align: right;">
+        <p-progressSpinner aria-label="Loading"></p-progressSpinner>
+
+    </div>
+    <div *ngIf="hidetxt"> பதிவு கொடுக்கப்பட்டுள்ள தேதி
+        <span> "{{this.maxDate}}"</span>
+    </div>
+       <p class="font news-title" style="font-size:23px;" [innerHTML]="newsTopic"></p>
+       <p class="font-short news-content-smaller" [innerHTML]="newsDetails"></p>
+        </div>
+    </div>
+</div>
+  </p-panel>

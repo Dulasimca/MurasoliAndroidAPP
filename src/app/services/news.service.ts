@@ -13,7 +13,7 @@ import { RestapiService } from './restapi.service';
     data!: Observable<any>;
     district?: any = [];
     list: any = [];
-
+    globalsearch:number=1;
     constructor(private _restApiService: RestapiService, private _datepipe: DatePipe,
       private _converter: Converter, private _dataSharing: DataSharingService) { }
 
@@ -38,6 +38,11 @@ import { RestapiService } from './restapi.service';
         return this.news;
     }
 
+    setGlobalPagNum(pageno: number) {
+      this.globalsearch = (pageno !== undefined && pageno !== null) ? pageno : 1;
+    }
+
+
     createObject(data: any): any {    
       this.list= [];    
       data.forEach((x: any) => {
@@ -47,6 +52,7 @@ import { RestapiService } from './restapi.service';
         x.incidentDate = incidentDate;
         x.img = x.g_image;
         x.imgURL = this._dataSharing.smallImgURL + x.g_image;
+        x.imgDocURL = this._dataSharing.imgURL + x.g_image;
         x.hasImg = (x.g_image && x.g_image !== '') ? true : false;
         x.headLine = x.g_newstitletamil;
         x.newsShort = x.g_newsshorttamil;

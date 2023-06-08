@@ -17,12 +17,12 @@ import {MessageModule} from 'primeng/message';
 import { ToastModule } from 'primeng/toast';
 import { TabViewModule } from 'primeng/tabview';
 import { TableModule } from 'primeng/table';
-import {CardModule} from 'primeng/card'
+import {CardModule} from 'primeng/card';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { NewsDetailComponent } from './news-detail/news-detail.component';
 import { DistrictNewsComponent } from './district-news/district-news.component';
@@ -45,6 +45,19 @@ import { HomeeditionComponent } from './homeedition/homeedition.component';
 import { HomeeditionchennaiComponent } from './homeeditionchennai/homeeditionchennai.component';
 import { HomeeditioncoimbatoreComponent } from './homeeditioncoimbatore/homeeditioncoimbatore.component';
 import { HomeeditionmaduraiComponent } from './homeeditionmadurai/homeeditionmadurai.component';
+import { HomeComponent } from './home/home/home.component';
+import { HomeeditiontrichyComponent } from './homeeditiontrichy/homeeditiontrichy.component';
+import { WorldNewsComponent } from './world-news/world-news.component';
+import { HomeadditionalComponent } from './homeadditional/homeadditional.component';
+import { AboutMaranComponent } from './about-maran/about-maran.component';
+import { AccordionModule} from 'primeng/accordion';
+import { EditorialComponent } from './editorial/editorial.component'
+import { SkeletonModule } from 'primeng/skeleton';
+import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
+import { PanelModule } from 'primeng/panel';
+import { PathipuMobileComponent } from './pathipu-mobile/pathipu-mobile.component';
+import { NewsMobileComponent } from './news-mobile/news-mobile.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -65,7 +78,16 @@ import { HomeeditionmaduraiComponent } from './homeeditionmadurai/homeeditionmad
     HomeeditionComponent,
     HomeeditionchennaiComponent,
     HomeeditioncoimbatoreComponent,
-    HomeeditionmaduraiComponent
+    HomeeditionmaduraiComponent,
+    HomeeditiontrichyComponent,
+    WorldNewsComponent,
+    HomeadditionalComponent,
+    AboutMaranComponent,
+    EditorialComponent,
+    SkeletonLoaderComponent,
+    PathipuMobileComponent,
+    NewsMobileComponent,
+    SearchComponent,
     
   ],
   imports: [
@@ -89,7 +111,11 @@ import { HomeeditionmaduraiComponent } from './homeeditionmadurai/homeeditionmad
     ToastModule,
     TabViewModule,
     TableModule,
-    CardModule
+    CardModule,
+    AccordionModule,
+    ProgressSpinnerModule,
+    SkeletonModule,
+    PanelModule
   ],
   entryComponents: [],
   providers: [AuthService, RestapiService, DatePipe, DataSharingService, Converter, AuthGuard, NewsService, MessageService],

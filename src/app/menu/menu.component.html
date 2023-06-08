@@ -1,3 +1,34 @@
-<div class="col-12 md:col-12 lg:col-12 no-pad">
-    <p-menubar [model]="items"></p-menubar>
+<div class="col-12 md:col-12 lg:col-12 no-pad" id="MyMenu" #target>
+    <p-menubar [model]="items">
+        <a tabindex="1" class="p-menubar-button" style="display:inline !important; padding-right: 15px !important;" routerLink="/home"><i class="pi pi-fw pi-home"></i></a>
+        <a tabindex="2" class="p-menubar-button" style="display:inline !important;padding-right: 15px !important;" routerLink="/pathipumobile"><i class="pi pi-fw pi-print"></i></a>
+        <a tabindex="2" class="p-menubar-button" style="display:inline !important;padding-right: 15px !important;" routerLink="/newsmobile"><i class="pi pi-fw pi-globe"></i></a>
+        <a tabindex="2" class="p-menubar-button" style="display:inline !important;padding-right: 15px !important;" routerLink="/editorial"><i class="pi pi-fw pi-pencil"></i></a>
+        <a tabindex="3" class="p-menubar-button" style="display:inline !important;padding-right: 15px !important;" routerLink="/about"><i class="pi pi-fw pi-exclamation-circle"></i></a>
+        <a tabindex="4" class="p-menubar-button" style="display:inline !important;padding-right: 15px !important;" routerLink="/contact-us"><i class="pi pi-fw pi-phone"></i></a>
+        <a tabindex="5" class="p-menubar-button" style="display:inline !important;" href="https://mrstest.avahan.net/" target="_blank"><i class="pi pi-fw pi-paperclip"></i></a>
+       
+    </p-menubar>
 </div>
+<!-- <script>
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("MyMenu");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+    </script> -->
+
+    <button *ngIf="isShow"  (click)="gotoTop(target)" style="position: fixed; 
+    bottom: 20px;
+    right: 23px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 30px;
+    outline: none;"><i class="pi pi-arrow-up" style="font-size: 1rem" ></i></button>

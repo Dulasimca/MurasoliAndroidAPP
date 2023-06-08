@@ -10,6 +10,7 @@ import { RestapiService } from '../services/restapi.service';
 import { R3SelectorScopeMode } from '@angular/compiler';
 import { MessageService } from 'primeng/api';
 import { ResponseMessage } from '../common-module/messages';
+import { Router, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-e-paper',
   templateUrl: './e-paper.component.html',
@@ -36,10 +37,10 @@ export class EPaperComponent implements OnInit {
    
   constructor(private _dataSharing: DataSharingService, private _pdfService: NgxExtendedPdfViewerService,
     private sanitizer: DomSanitizer, private _newsService: NewsService, private _datepipe: DatePipe,
-    private _restApiService: RestapiService,private messageService: MessageService) {
-    pdfDefaultOptions.defaultZoomValue = '90%'
-    pdfDefaultOptions.doubleTapZoomFactor = '150%'; // The default value is '200%'
-    pdfDefaultOptions.maxCanvasPixels = 4096 * 4096 * 5;
+    private _restApiService: RestapiService,private messageService: MessageService,private _router: Router) {
+    // pdfDefaultOptions.defaultZoomValue = '90%'
+    // pdfDefaultOptions.doubleTapZoomFactor = '150%'; // The default value is '200%'
+    // pdfDefaultOptions.maxCanvasPixels = 4096 * 4096 * 5;
   }
 
   public exportAsText(pageNum: number): void {
@@ -52,43 +53,47 @@ export class EPaperComponent implements OnInit {
   pageChange($event: any) { this.exportAsText($event); };
 
   ngOnInit(): void {
-    this._newsService.getDistrict();
-    //this.murasolipdffilepath =this._dataSharing.fileURL; 
-     this.murasolipdffilepath =this._dataSharing.fileURL;
-    this.murasolifilename = 'empty.pdf';
-    this.src = this.murasolipdffilepath + this.murasolifilename ;
-    console.log(this.src)     
-    this._restApiService.get('EditionMapping/GetEditionMapping').subscribe(res => {
-      this.editionMapping = res.Table
-    })
-    this.items = [
-      {
-        icon: 'pi pi-facebook',
-        command: () => {
-          this.share('_FB');
-        }
-      },
-      {
-        icon: 'pi pi-twitter',
-        command: () => {
-          this.share('_TW');
-        }
-      },
-      {
-        icon: 'pi pi-send',
-        command: () => {
-          this.share('_TG');
-        }
-      },
-      {
-        icon: 'pi pi-whatsapp',
-        command: () => {
-          this.share('_WA');
-        }
-      },
-    ];
-  }
+  window.open("https://mrstest.avahan.net/","_blank");
 
+    // this._newsService.getDistrict();
+    //  this.murasolipdffilepath =this._dataSharing.fileURL;
+    // this.murasolifilename = 'empty.pdf';
+    // this.src = this.murasolipdffilepath + this.murasolifilename ;
+    // console.log(this.src)     
+    // this._restApiService.get('EditionMapping/GetEditionMapping').subscribe(res => {
+    //   this.editionMapping = res.Table
+    // })
+    // this.items = [
+    //   {
+    //     icon: 'pi pi-facebook',
+    //     command: () => {
+    //       this.share('_FB');
+    //     }
+    //   },
+    //   {
+    //     icon: 'pi pi-twitter',
+    //     command: () => {
+    //       this.share('_TW');
+    //     }
+    //   },
+    //   {
+    //     icon: 'pi pi-send',
+    //     command: () => {
+    //       this.share('_TG');
+    //     }
+    //   },
+    //   {
+    //     icon: 'pi pi-whatsapp',
+    //     command: () => {
+    //       this.share('_WA');
+    //     }
+    //   },
+    // ];
+  }
+  ngDoCheck()
+  {
+    this._router.navigate(['/home']);
+  }
  onSelectDistrict() {
     // var data: any = [];
     // this.districts = this._newsService.district;

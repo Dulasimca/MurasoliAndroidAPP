@@ -2,11 +2,11 @@ import { DatePipe } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Converter } from '../helper/converter';
-import { AuthService } from '../services/auth.service';
-import { DataSharingService } from '../services/data-sharing.service';
-import { NewsService } from '../services/news.service';
-import { RestapiService } from '../services/restapi.service';
+import { Converter } from 'src/app/helper/converter';
+import { AuthService } from 'src/app/services/auth.service';
+import { DataSharingService } from 'src/app/services/data-sharing.service';
+import { NewsService } from 'src/app/services/news.service';
+import { RestapiService } from 'src/app/services/restapi.service';
 
 @Component({
   selector: 'app-home',
@@ -48,36 +48,45 @@ export class HomeComponent implements OnInit {
           const incidentShortDate = this._converter.convertMonth(1, date?.toString());
           const incidentDate = this._converter.convertMonth(2, fullDate?.toString());
           if (data.g_displayside === 0 && data.g_priority === 2) {
-            if (setLeftCount < 4) {
+            if (setLeftCount < 5) {
               this.firstColData.push(
                 {
-                  incidentShortDate: incidentShortDate, incidentDate: incidentDate, headLine: data.g_newstitletamil,
-                  newsShort: data.g_newsshorttamil, newsDetail: data.g_newsdetailstamil,
+                  incidentShortDate: incidentShortDate,
+                  incidentDate: incidentDate,
+                  headLine: data.g_newstitletamil,
+                  newsShort: (data.g_newsshorttamil.substring(0, 100)).concat('...'), newsDetail: data.g_newsdetailstamil,
                   img: data.g_image, imgURL: this._dataSharing.imgURL + data.g_image,
                   hasImg: (data.g_image && data.g_image !== '') ? true : false,
                   storyId: data.g_slno
+                  // smallImgURL
                 }
               );
               setLeftCount++;
             }
           } else if (data.g_displayside === 2 && data.g_priority === 2) {
-            if (setCenterCount < 4 && setSecondMainCount > 0) {
+            if (setCenterCount < 1 && setSecondMainCount > 0) {
               this.secondColData.push(
                 {
-                  incidentShortDate: incidentShortDate, incidentDate: incidentDate, headLine: data.g_newstitletamil,
-                  newsShort: data.g_newsshorttamil, newsDetail: data.g_newsdetailstamil,
-                  img: data.g_image, imgURL: this._dataSharing.imgURL + data.g_image,
+                  incidentShortDate: incidentShortDate,
+                  incidentDate: incidentDate,
+                  headLine: (data.g_newstitletamil),
+                  newsShort: (data.g_newsshorttamil),
+                  newsDetail: data.g_newsdetailstamil,
+                  img: data.g_image, imgURL: this._dataSharing.imgURL + data.g_image, 
                   hasImg: (data.g_image && data.g_image !== '') ? true : false,
                   storyId: data.g_slno
                 }
               );
               setCenterCount++;
-          }
+            }
             if (setSecondMainCount < 1) {
               this.secondMainColData.push(
                 {
-                  incidentShortDate: incidentShortDate, incidentDate: incidentDate, headLine: data.g_newstitletamil,
-                  newsShort: data.g_newsshorttamil, newsDetail: data.g_newsdetailstamil,
+                  incidentShortDate: incidentShortDate,
+                  incidentDate: incidentDate,
+                  headLine: (data.g_newstitletamil),
+                  newsShort: (data.g_newsshorttamil),
+                  newsDetail: data.g_newsdetailstamil,
                   img: data.g_image, imgURL: this._dataSharing.imgURL + data.g_image,
                   hasImg: (data.g_image && data.g_image !== '') ? true : false,
                   storyId: data.g_slno
@@ -85,15 +94,18 @@ export class HomeComponent implements OnInit {
               );
               setSecondMainCount++;
             }
-             
+
           } else if (data.g_displayside === 2 && data.g_priority === 2) {
-            
+
           } else if (data.g_displayside === 1 && data.g_priority === 2) {
-            if (setRightCount < 4) {
+            if (setRightCount < 5) {
               this.thridColData.push(
                 {
-                  incidentShortDate: incidentShortDate, incidentDate: incidentDate, headLine: data.g_newstitletamil,
-                  newsShort: data.g_newsshorttamil, newsDetail: data.g_newsdetailstamil,
+                  incidentShortDate: incidentShortDate,
+                  incidentDate: incidentDate,
+                  headLine: data.g_newstitletamil,
+                  newsShort: (data.g_newsshorttamil.substring(0, 100)).concat('...'),
+                  newsDetail: data.g_newsdetailstamil,
                   img: data.g_image, imgURL: this._dataSharing.imgURL + data.g_image,
                   hasImg: (data.g_image && data.g_image !== '') ? true : false,
                   storyId: data.g_slno
@@ -102,12 +114,15 @@ export class HomeComponent implements OnInit {
               setRightCount++;
             }
           } else if (data.g_displayside === 3 && data.g_priority === 2) {
-            if (setBottomCount < 8) {
+            if (setBottomCount < 4) {
               this.bottomNewsData.push(
                 {
-                  incidentShortDate: incidentShortDate, incidentDate: incidentDate, headLine: data.g_newstitletamil,
-                  newsShort: data.g_newsshorttamil, newsDetail: data.g_newsdetailstamil,
-                  img: data.g_image, imgURL: this._dataSharing.imgURL+ data.g_image,
+                  incidentShortDate: incidentShortDate,
+                  incidentDate: incidentDate,
+                  headLine: data.g_newstitletamil,
+                  newsShort: (data.g_newsshorttamil.substring(0, 100)).concat('...'),
+                  newsDetail: data.g_newsdetailstamil,
+                  img: data.g_image, imgURL: this._dataSharing.imgURL + data.g_image,
                   hasImg: (data.g_image && data.g_image !== '') ? true : false,
                   storyId: data.g_slno
                   // smallImgURL 
@@ -117,14 +132,6 @@ export class HomeComponent implements OnInit {
             }
           }
         })
-        // centerColData.forEach((item: any, index: number) => {
-        //   item.imgURL = this._dataSharing.smallImgURL + item.img;
-        //   if (index != 0) {
-        //     this.secondColData.push(item);
-        //   } else {
-        //     this.secondMainColData.push(item);
-        //   }
-        // })
       } else {
         console.log('error occurred');
       }
@@ -134,7 +141,7 @@ export class HomeComponent implements OnInit {
   }
 
   onNavigate(data: any) {
-    this._router.navigate(['/newscontent'], {queryParams: { storyid: data.storyId }});
+    this._router.navigate(['/newscontent'], { queryParams: { storyid: data.storyId } });
   }
 
 }

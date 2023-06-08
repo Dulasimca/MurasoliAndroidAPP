@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Inject } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -9,15 +11,20 @@ export class AboutComponent implements OnInit {
 
   content: any = [];
 
-  constructor() { }
+  constructor() {}
+  
+
 
   ngOnInit(): void {
     this.loadAbout();
   }
+
 
   loadAbout() {
     this.content.push(
       ) ;
   }
 
+
+ 
 }

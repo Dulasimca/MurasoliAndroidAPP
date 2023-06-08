@@ -1,19 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("../node_modules/primeicons/primeicons.css");
 @import url("../node_modules/primeng/resources/themes/saga-green/theme.css");
-@import url("../node_modules/primeng/resources/primeng.min.css");
+// @import url("../node_modules/primeng/resources/primeng.min.css");
 
 html,
 body {
     height: 100%;
+    width: auto!important; overflow-x: hidden!important
 }
 
 body {
     margin: 0 !important;
     // background: #a00000 !important;
-    background: #3c3939 !important;
-    font: normal 17px/26px Roboto, Arial, sans-serif; // font-family: sans-serif !important;
+    background: #ffffff !important;
+    // font: normal 17px/26px Roboto, Arial, sans-serif; // font-family: sans-serif !important;
     overflow-x: hidden;
+}
+
+h2 {
+    display: block;
+    font-size: 1.7em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 200 !important;
 }
 
 h3 {
@@ -63,34 +74,96 @@ a {
     justify-content: center;
 }
 
+.padding-firstcolumn {
+    padding-left: 10px !important;
+}
+
 .box-shadow {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .news-title {
-    font-size: 15px;
-    font-weight: 600;
-    overflow-wrap: break-word;
+    font-size: 23px;
+    color: #000 !important;
+    // font-weight: 600;
+    // overflow-wrap: break-word;
 }
-
+//date and time style
 .txt-small {
-    font-size: 11px;
+    font-size: 14px;
     white-space: pre;
-    color: grey;
+    color: rgb(116, 116, 116);
+    font-family: sans-serif;
 }
-
+@media (max-width: 600px) {
+    .txt-small {
+      font-size: 11px;
+    }
+  }
+  
+  @media (min-width: 601px) and (max-width: 900px) {
+    .txt-small {
+      font-size: 12px;
+    }
+  }
+  @media (min-width: 901px) and (max-width: 1200px) {
+    .txt-small {
+      font-size: 12px;
+    }
+  }
+  @media (min-width: 1201px) {
+    .txt-small {
+      font-size: 14px;
+    }
+  }
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+ 
 .news-content-smaller {
-    font-weight: 400;
-    font-size: 12.5px;
-    line-height: 20px;
+    // font-weight: 400;
+    color: #000 !important;
+    font-size: 18px;
+    overflow-wrap: break-word;
+    line-height: 26px;
+    border-bottom: 2px dotted #000000  ;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .news-content-small {
-    font-weight: 400;
     font-size: 14px;
-    line-height: 20px;
+    line-height: 2;
 }
-
+.inner-news-header-font {
+ font-size: 23px;
+ color: #000 !important;
+}
+@media (max-width: 450px) {
+    .inner-news-header-font {
+      font-size: 21px;
+    }
+  }
+@media (min-width: 451px) and (max-width: 1200px) {
+    .inner-news-header-font {
+      font-size: 22px;
+    }
+  }
+  @media (min-width: 1201px) {
+    .inner-news-header-font {
+      font-size: 23px;
+    }
+}
+.inner-news-content {
+    line-height: 32px;
+    text-align: justify;
+    // line-height: 2;
+}
+.txt-clr-blck {
+    color: #000 !important;
+}
 .bar-dark {
     background: black;
     height: 2px;
@@ -104,22 +177,22 @@ a {
 }
 
 .bdr-vertical-light {
-    border-right: 1px solid rgb(211, 211, 211);
+    border-right: 0px solid rgb(211, 211, 211);
 }
 
 .bdr-vertical-light-lt {
-    border-left: 1px solid rgb(211, 211, 211);
+    border-left: 0px solid rgb(211, 211, 211);
 }
 
 .bdr-horizontal-light {
     border-top: 1px solid rgb(211, 211, 211);
 }
 
-.breaking-news {
-    background: #b90909;
-    color: white;
-    font-weight: 600;
+.bdr-horizontal-dark {
+    border-top: 2px solid rgb(211, 211, 211);
 }
+
+ 
 
 .breaking-news-content {
     background: #333;
@@ -144,11 +217,24 @@ a {
 /// 
 
 ///menu
+
+.grid{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding-bottom: 3% !important;
+}
+
+// .p-menubar-end{
+    
+//     padding-right: 20px;
+// }
+
 .p-menubar {
+   
     padding: 0 !important;
     // background: #333 !important;
     background: #b90909 !important;
-    border: 2px solid #a70505 !important;
+    border: 3px solid #a70505 !important;
 }
 
 // .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
@@ -156,12 +242,14 @@ a {
 // }
 .p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link .p-menuitem-text {
     // color: #ddd9d9 !important;
+    
     color: #f4efeffe !important;
     font-weight: 500 !important;
     font-size: 14px;
 }
 
 .p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link .p-submenu-icon {
+   
     font-weight: 500 !important;
     color: #f4efeffe !important;
     margin-right: 0.25rem !important;
@@ -169,6 +257,7 @@ a {
 }
 
 .p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link .p-menuitem-icon {
+   
     font-weight: 500 !important;
     color: rgb(248, 243, 243) !important;
     margin-right: 0.25rem !important;
@@ -176,22 +265,26 @@ a {
 }
 
 .p-menubar .p-menubar-button {
+    
     font-weight: 500 !important;
     color: #f4efeffe !important;
     // color: #ddd9d9 !important;
 }
 
 .p-menubar .p-menubar-button {
+   
     width: 2.8rem !important;
     height: 2.8rem !important;
 }
 
 .p-menubar .p-menubar-root-list {
+   
     // background: #333 !important;
     background: #b90909 !important;
 }
 
 .p-menubar .p-menubar-button:hover {
+    
     font-weight: 500 !important;
     color: #f4efeffe !important;
     // color: #ddd9d9 !important;
@@ -199,11 +292,13 @@ a {
 }
 
 .p-menubar .p-menubar-button:focus {
-    box-shadow: 0 0 0 0.1rem #db0a0a !important;
+    
+    box-shadow: 0 0 0 0.0rem #db0a0a !important;
 }
 
 .p-menubar .p-menubar-root-list>.p-menuitem.p-menuitem-active>.p-menuitem-link,
 .p-menubar .p-menubar-root-list>.p-menuitem.p-menuitem-active>.p-menuitem-link:not(.p-disabled):hover {
+    
     background: #eb0000 !important;
     // background: #d40505 !important;
     // background: #262626 !important;
@@ -217,6 +312,7 @@ a {
 
 .p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link:focus {
     box-shadow: inset 0 0 0 0.15rem #db0a0a !important;
+
 }
 
 .p-menubar .p-submenu-list {
@@ -269,11 +365,13 @@ a {
 }
 
 .p-menubar-button>.pi {
-    font-size: 1.5rem !important;
+    
+    font-size: 1.4rem !important;
 }
 
 /// dropdown
 .p-dropdown .p-dropdown-label {
+
     padding: .25rem !important;
 }
 
@@ -309,7 +407,7 @@ a {
     background: #ffcece !important;
 }
 .p-button {
-    color: #000000 !important;
+    color: white !important;
     background: #b90909 !important;
     border: 1px solid #383636 !important;
 }
@@ -363,15 +461,272 @@ ngx-extended-pdf-viewer select {
     background: #a70505 !important;
     border-top-right-radius: 25px !important;
     border-color: #000000;
-    color: #d5d5d6 !important;
+    color: #000000 !important;
 }
+
+.headind-text
+{
+    border-radius: 20px 20px 0px 0px;
+    background-color: #b90909 !important;
+}
+.headind-text h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0px 0px 8px 0px;
+    text-align: center;
+    font-family: Tahoma, Geneva, sans-serif;
+    line-height: 24px;
+    padding: 6px;
+    text-shadow: 2px 2px 4px #000000;
+}
+  
+.nunc-bott-grid
+{
+    // border: 2px solid #f7f4f4;
+    padding: 0px;
+    margin: 0px;
+    box-shadow: 3px 10px 5px #73878e;
+}
+.nunc-bott-grid p {
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+    width: 100%;
+    line-height: 24px;
+    padding: 10px;
+    text-align: nunc-bott-grid p;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+.nunc-bwn a {
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background: #ad1010;
+    padding: 6px 16px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.wrap {
+    float: right;
+    margin: 0 0 10px 10px;
+}
+
+.about-top h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #ee303a;
+    margin: 0px 0px 20px 15px;
+}
+
 .app-footer {
     padding: 0 !important;
     // background: #333 !important;
     background: #b90909 !important;
     border: 2px solid #a70505 !important;
 }
+@font-face {
+    font-family: TAM-Kamban;
+    src:url(/assets/fonts/TAU_Elango_Kamban.ttf);
+    font-style: normal;
+    font-display: swap;
+    // font-family: TAM-Kamban !important
+}
+.font {
+    font-family: TAM-Kamban !important;
+}
+@font-face {
+    font-family: Elango-Panchali;
+    src:url(/assets/fonts/TAU_Elango_Panchali.ttf);
+    font-style: normal;
+    font-display: swap;
+    // font-family: TAM-Kamban !important
+}
+.font-short {
+    font-family: Elango-Panchali !important;
+}
+ .img-content {
+    max-width: 140px;
+    height: auto;
+    padding-right: 3px;
+    object-fit: cover;
+    float: right;
+ }
+  .breaking-news1{
+      animation: ani 2s infinite;
+      text-align: center;
+      padding: 0 !important;
+  }
+  
+  @keyframes ani{
+      from{
+          letter-spacing: 40px;
+          filter: blur(3px);
+          opacity: 0;
+      }to{
+          letter-spacing: 0;
+          filter: blur(0);
+          opacity: 1px;
+      }
+  }
+   
+  
+  /* Mukkiya seidhigal font*/
+
+  .breaking-news {
+    background: #b90909;
+    color: white;
+    font-size: 20px;
+    // font-weight: 600;
+}
+  @media (max-width: 250px) {
+    .breaking-news {
+      font-size: 14px;
+    }
+  }
+  @media(min-width: 251px) and (max-width: 450px) {
+    .breaking-news {
+      font-size: 16px;
+    }
+  }
+  
+  @media(min-width: 451px) and (max-width: 750px) {
+    .breaking-news {
+      font-size: 18px;
+    }
+  }
+  @media (min-width: 751px) and (max-width: 960px) {
+    .breaking-news {
+      font-size: 18px;
+    }
+  }
+   
+  @media (min-width: 961px) and (max-width: 1200px) {
+    .breaking-news {
+      font-size: 20px;
+    }
+  }
+  @media (min-width: 1201px) {
+    .breaking-news {
+      font-size: 22px;
+    }
+  }
+//second main content header
+  .main-content-font {
+font-size: 27 !important;
+  }
+  @media (max-width: 400px) {
+    .main-content-font {
+      font-size: 22px;
+    }
+  }
+  
+  @media (min-width: 401px) and (max-width: 750px) {
+    .main-content-font {
+      font-size: 24px;
+    }
+  }
+  @media (min-width: 751px) and (max-width: 900px) {
+    .main-content-font {
+      font-size: 24px;
+    }
+  }
+  @media (min-width: 901px) and (max-width: 1200px) {
+    .main-content-font {
+      font-size: 25px;
+    }
+  }
+  @media (min-width: 1201px) {
+    .main-content-font {
+      font-size: 27px;
+    }
+  }
+
+  .p-panel .p-panel-header {
+    border: 1px solid #dee2e6;
+    background:#b90909 !important;
+    color: whitesmoke !important;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    height: 3rem;
+    vertical-align: middle;
+}
+
+//// All Image in same Size 
+.imgfit{
+       width: 100px;
+     height: 70px;
+     object-fit: cover;
+    
+    }
+
+   
 
 
 
 
+.kural-div {
+    max-width: 450px;
+    padding: 10px;
+    border: 3px solid #fff6da;
+    box-shadow: 1px 5px 9px #ffdd52;
+ }
+
+.dsh-topic {
+text-align: -webkit-center;
+font-size: 18px;
+ font-family: 'Roboto';
+font-weight: 700;
+color: transparent;
+background-image: linear-gradient(to right, #553c9a, #ee4b2b, #00c2cb, #ff7f50, rgb(169, 78, 96));
+ -webkit-background-clip: text;
+background-clip: text;
+background-size: 200%;
+background-position: -200%;
+animation: animated-gradient 5s infinite alternate-reverse;
+}
+
+@keyframes animated-gradient {
+to {
+background-position: 200%;
+ }
+}
+
+.red {
+color: #d11212 !important;
+
+}
+.padhipugal-box {
+    box-shadow: 1px 1px 12px #73878e;
+     border-radius: 5px;height: 6.2rem;
+     padding: 0 !important;
+}
+.related-content {
+    text-decoration: underline;font-family: monospace;
+        text-decoration: underline;
+        color: cadetblue;
+        font-weight: 600;
+}
+
+.p-calendar-w-btn .p-inputtext {
+
+    display: none;
+    background-color: white;
+    // margin-left: 30%;
+     position: relative;
+
+}
+.p-calendar {
+    // flex: 1 1 auto;
+    // width: 10%;
+    height: 30px;
+    font-size: smaller;
+    background-color: white;
+
+
+    
+}

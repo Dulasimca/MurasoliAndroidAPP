@@ -21,6 +21,7 @@ export class NewsDetailComponent implements OnInit {
   navUrl: string = '';
   href: string = '';
   storyId: any;
+  size = 18;
   constructor(private _dataSharing: DataSharingService, private _datepipe: DatePipe,
     private _restApiService: RestapiService, private _converter: Converter,
     private _snapshot: ActivatedRoute) { }
@@ -47,8 +48,7 @@ export class NewsDetailComponent implements OnInit {
   }
 
   share(type: string) {
-    //const shareUrl = window.location.href;
-    const shareUrl = 'https://murasoli.devtesting.in/newscontent?storyid=' + this.storyId;
+    const shareUrl = window.location.href;
     let returnValue = null;
     if (type === '_MA') {
       this.href = 'mailto:?subject=' + this.headLine + '&body=Check out this ' + shareUrl;

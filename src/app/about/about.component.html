@@ -1,18 +1,17 @@
 <app-header></app-header>
 <app-menu></app-menu>
-<div class="col-12 md:col-12 lg:col-12">
-  <div class="bar-dark"></div>
-  <div class="grid grid-center">
-            <div class="col-3 md:col-3 lg:col-2">
-                <img src="assets/images/news/logo.jpg" style="width: -webkit-fill-available !important;"/>
-            </div>
-    <div class="col-9 md:col-8 lg:col-8">
-        <!-- <div *ngFor="let i of content"  style="margin-top: 10px;">
-                <p style="color: #666666;font-size: 12px !important;">{{i}}</p>
-            </div>
-        </div> -->
-        <p style="font-size:15px; color:red; font-family:Tahoma, Geneva, sans-serif;"><b>முரசொலி</b></p>
-        <p id="desc" style="float: left; line-height: 24px; text-align: justify; color: rgb(102, 102, 102); font-family: Tahoma, Geneva, sans-serif; font-size: 12px; overflow: hidden; height: auto;">
+<div class="col-12">
+  <!-- <div class="bar-dark"></div> -->
+ <p-panel header="முரசொலி பற்றி">
+  <div class="grid no-gutter">
+    <div class="col-12 no-pad">
+        <div class="col-2" style="float: left">
+            <img src="assets/images/news/logo.jpg" style="width: -webkit-fill-available !important;"/>
+        </div>
+        <div class="col-12 no-pad">
+        <!-- <p class="font" style="font-size:20px; color:red;">
+            <b>முரசொலி</b></p> -->
+        <p class="font-short news-content-smaller" id="desc" style="margin-right: 1rem;">
 
          
             
@@ -305,5 +304,13 @@
 
 வெல்க அதன் திறன்!!<br><br>
          </p>
-    </div>
+        </div>
+      </div>  
+  </div>
+</p-panel>
+
 </div>
+
+
+
+

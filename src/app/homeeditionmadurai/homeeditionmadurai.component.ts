@@ -34,6 +34,8 @@ export class HomeeditionmaduraiComponent implements OnInit {
   indexno: any =0;
   pageNo: number = 1;
   districtnewsCols:  any = [];
+  loader: boolean = false;
+  showPaginator: boolean = false;
   constructor(private _router: Router, private _restApiService: RestapiService,
     private _dataSharing: DataSharingService, private _datepipe: DatePipe,
     private _converter: Converter, private _authService: AuthService, private _newsService: NewsService,
@@ -73,6 +75,7 @@ export class HomeeditionmaduraiComponent implements OnInit {
    
  
   loadContentmadurai() { 
+    this.loader = true;
     this.newsDetails = []    
     this._restApiService.get('FlashNewsEntry/GetFlashNewsEntry').subscribe(res => {
       res.Table.forEach((i: any) => {
@@ -82,23 +85,39 @@ export class HomeeditionmaduraiComponent implements OnInit {
     const params = new HttpParams().append('slno',2);    
     this._restApiService.getByParameters('MainNewsEntryEdition/GetMainNewsEntrybyeditionId',params).subscribe(res => {
     //this._restApiService.get('MainNewsEntry/GetMainNewsEntry').subscribe(res => {
-      if(res) {
+      if(res !== null && res !== undefined ){
+        this.loader = false;
+        if(res.Table.length !== 0){
+          this.showPaginator = true;
+          this.loader = false;
         var response = this._newsService.createObject(res.Table);  
         var response = res.Table;      
          response.forEach((i: any, index: number) => {
            i.id = index + 1;
          })
+        
          this.newsDetails = response.slice(0);
          this.newsAllData = this.newsDetails.slice(0);
          this.data = this.newsDetails.slice(0);
-       
+        } else {
+          this.showPaginator = false;
+          this.loader = false;
+          this.messageService.clear();
+          this.messageService.add({
+            key: 't-msg', severity: ResponseMessage.SEVERITY_WARNING,
+            summary: ResponseMessage.SUMMARY_WARNING, detail: ResponseMessage.NoRecordMessage
+            
+          });
+        }
        }else{
+        this.showPaginator = false;
+        this.loader = true;
          this.newsDetails = []
          console.log('True')
          this.messageService.clear();
          this.messageService.add({
            key: 't-msg', severity: ResponseMessage.SEVERITY_ERROR,
-           summary: ResponseMessage.SUMMARY_ERROR, detail: ResponseMessage.NoRecordMessage
+           summary: ResponseMessage.SUMMARY_ERROR, detail: ResponseMessage.ErrorMessage
            
          });
          }
@@ -117,7 +136,7 @@ export class HomeeditionmaduraiComponent implements OnInit {
         break;
       case 'L':
         this.data = this.newsDetails.slice(len - 3, len);
-        this.pageNo = Math.round((len / 3) * 1) ;
+        this.pageNo = (Math.round((len / 3) * 1) == 0) ? 1 : Math.round((len / 3) * 1);
         break;
       case 'P':
         let index = this.data[0].id;

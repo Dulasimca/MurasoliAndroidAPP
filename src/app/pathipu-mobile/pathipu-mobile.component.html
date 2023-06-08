@@ -1,0 +1,93 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<div class="col-12 md:col-12 lg:col-12" style="background-color: #ffffff ;">
+    <div #row1 class="col-12 md:col-12 lg:col-12 no-pad-btm" style="box-sizing: border-box;">
+        <div class="grid">
+            <div class="col-12"></div>
+            <div class="col-12 md:col-12 lg:col-12 no-pad-top no-pad-btm">
+                <!-- <div class="grid"> -->
+                <div class="col-12 md:col-12 lg:col-12 padhipugal-box" style="background: #9d8361"
+                    routerLink="/chennaiedition">
+                    <div class="grid">
+                        <img src="assets/images/chennaiicon.PNG" width="150px" height="100px">
+                        <div class="col-1"></div>
+                        <div class="col-4 md:col-4 lg:col-4 font" style="font-size: 23px;" style="color: rgb(0, 0, 0);display: flex;
+                            align-items: center;
+                            font-size: 23px;">சென்னை
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+
+                <!-- //2 -->
+                <div class="col-12 md:col-12 lg:col-12 padhipugal-box" style="background: lightslategray"
+                    routerLink="/coimbatoreedition">
+                    <div class="grid">
+                        <img src="assets/images/coimbatoreicon.jpg" width="150px" height="100px">
+                        <div class="col-1"></div>
+                        <div class="col-4 md:col-4 lg:col-4 font" style="font-size: 23px;" style="color: rgb(0, 0, 0);display: flex;
+                align-items: center;
+                font-size: 23px;">கோயம்புத்தூர்
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+
+                <!-- //3 -->
+                <div class="col-12 md:col-12 lg:col-12 padhipugal-box" style="background: chocolate"
+                    routerLink="/maduraiedition">
+                    <div class="grid">
+                        <img src="assets/images/maduraitemple.PNG" width="150px" height="100px">
+                        <div class="col-1"></div>
+                        <div class="col-4 md:col-4 lg:col-4 font" style="font-size: 23px;" style="color: rgb(0, 0, 0);display: flex;
+                align-items: center;
+                font-size: 23px;">மதுரை
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+
+                <!-- //4 -->
+                <div class="col-12 md:col-12 lg:col-12 padhipugal-box" style="background: rgb(83, 140, 140)"
+                    routerLink="/trichyedition">
+                    <div class="grid">
+                        <img src="assets/images/Tiruchi_Rockfort.jpg" width="150px" height="100px">
+                        <div class="col-1"></div>
+                        <div class="col-4 md:col-4 lg:col-4 font" style="font-size: 23px;" style="color: rgb(0, 0, 0);display: flex;
+    align-items: center;
+    font-size: 23px;">திருச்சி
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 md:col-12 lg:col-12 no-pad no-pad-btm">
+        <div class="col-12">தொடர்புடைய பதிவுகள்</div>
+        <div class="col-12"></div>
+        <div *ngIf="loader" style="text-align: center;">
+            <p-progressSpinner aria-label="Loading"></p-progressSpinner>
+        </div>
+        <div class="col-12 no-pad cursor" *ngFor="let i of firstColData" (click)="onNavigate(i)">
+            <div class="grid">
+                <div class="news-title font">
+                    <span> {{i.headLine}} </span>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img *ngIf="i.hasImg" [src]="i.imgURL" style="width: -webkit-fill-available !important;" />
+                </div>
+                <div>
+                    <span class="txt-small">{{i.incidentShortDate}}</span>
+                </div>
+                <div class="news-content-smaller font-short">{{i.newsShort}}</div>
+                <div class="col-12"></div>
+                <!-- </div> -->
+                <!-- <div class="col-12 bdr-horizontal-light"></div> -->
+            </div>
+        </div>
+    </div>
+</div>

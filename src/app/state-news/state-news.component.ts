@@ -27,6 +27,8 @@ export class StateNewsComponent implements OnInit {
   first: number = 1;
   data: any[] = [];
   pageNo: number = 1;
+  showPaginator: boolean = false;
+  loader: boolean = false;
   constructor(private _router: Router, private _restApiService: RestapiService,
     private _newsService: NewsService,private messageService: MessageService) { }
 
@@ -36,10 +38,14 @@ export class StateNewsComponent implements OnInit {
   }
 
   loadNews() {
+    this.loader = true;
     const params = new HttpParams().append('slno','2');
-    
     this._restApiService.getByParameters('MainNewsEntryState/GetMainNewsEntrybystateId',params).subscribe(res => {
-      if (res) {
+      if (res !== null && res !== undefined) {
+        this.loader = false;
+        if(res.Table.length !== 0){
+          this.showPaginator = true;
+          this.loader = false;
         var response = this._newsService.createObject(res.Table);
         var response = res.Table;
         response.forEach((i: any, index: number) => {
@@ -49,12 +55,22 @@ export class StateNewsComponent implements OnInit {
         this.newsDetails = response.slice(0);
         this.newsAllData = this.newsDetails.slice(0);
         this.data = this.newsDetails.slice(0, 3);
+      } else {
+        this.loader = false;
+        this.showPaginator  = false;
+        this.messageService.add({
+          key: 't-msg', severity: ResponseMessage.SEVERITY_WARNING,
+          summary: ResponseMessage.SUMMARY_WARNING, detail: ResponseMessage.NoRecordMessage
+        });
+      }
       }else{
+        this.loader = false;
+        this.showPaginator = false;
         console.log('True')
         this.messageService.clear();
         this.messageService.add({
           key: 't-msg', severity: ResponseMessage.SEVERITY_ERROR,
-          summary: ResponseMessage.SUMMARY_ERROR, detail: ResponseMessage.NoRecordMessage
+          summary: ResponseMessage.SUMMARY_ERROR, detail: ResponseMessage.ErrorMessage
         });
       }
     });
@@ -69,7 +85,7 @@ export class StateNewsComponent implements OnInit {
         break;
       case 'L':
         this.data = this.newsDetails.slice(len - 3, len);
-        this.pageNo = Math.round((len / 3) * 1) ;
+        this.pageNo = (Math.round((len / 3) * 1) == 0) ? 1 : Math.round((len / 3) * 1);
         break;
       case 'P':
         let index = this.data[0].id;

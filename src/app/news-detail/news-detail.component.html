@@ -6,38 +6,43 @@
         <div #rows class="col-12 md:col-12 lg:col-12 no-pad-top">
             <div>
                 <span>
-                    <h3>{{headLine}}</h3>
+                    <h2 class="font">{{headLine}}</h2>
                 </span>
             </div>
             <div class="col-12 bdr-horizontal-light"></div>
-            <div *ngIf="hasImg" class="grid grid-center">
-                <div class="col-11 md:col-10 lg:col-8">
-                    <img [src]="imgSrc" style="width: -webkit-fill-available !important;height: 180px;" />
+            <div *ngIf="hasImg" class="grid">
+                <div class="col-12 md:col-12 lg:col-12">
+                    <img [src]="imgSrc" style="width: -webkit-fill-available !important;" />
                 </div>
             </div>
             <div *ngIf="hasImg" class="col-12 bdr-horizontal-light"></div>
             <div class="col-12 no-pad-top no-pad-btm txt-small" style="text-align: start;">
                 <div class="grid">
-                    <div class="col-12 md:col-4 lg:col-4 no-pad" style="text-align: left !important;">
-                       <span style="color: #2e2a2ade;font-size: 13px;"><b>{{paperTitle}}</b></span> &nbsp; | &nbsp; {{incidentDate}}
-                    </div>
-                    <div class="col-12 md:col-5 lg:col-5 no-pad" style="text-align: center !important;margin-left:-.75rem">
+                    
+                    
+                       <span style="color: #2e2a2ade;font-size: 13px; margin-bottom: 4%;"><b>{{paperTitle}}</b></span> &nbsp; | &nbsp; {{incidentDate}}
+
+                       <button style="height: 50%; border-radius: 18%; cursor:pointer; margin-left:7%;margin-bottom: 2%; border-color: green;"  (click)="size = size + 1">+</button>&nbsp;&nbsp;
+                    <button style="height: 50%; border-radius: 18%; cursor:pointer; margin-top:0%;border-color: crimson;" (click)="size = size - 1">-</button>
+                
+                        <div class="col-12 bdr-horizontal-light"></div>
+                        <div class="col-12 md:col-4 lg:col-4 no-pad" style="margin-left: 25%; margin-top: 3%;">
                         <span>
-                            <i class="pi pi-fw pi-facebook" style="font-size: 1.28rem;color: #365899;" (click)="share('_FB')"></i>
-                            <i class="pi pi-fw pi-twitter" style="font-size: 1.28rem;color: #1d9bf0;" (click)="share('_TW')"></i>
-                            <a #mail [href]="href" (click)="share('_MA')" target="_blank">
-                                <i class="pi pi-fw pi-envelope" style="font-size: 1.28rem;color: #ec2a2ade;">
-                                </i>
-                            </a>
-                            <i class="pi pi-fw pi-whatsapp" style="font-size: 1.28rem;color: #449e48;" (click)="share('_WA')"></i>
+                            <i class="pi pi-fw pi-facebook" style="font-size: 1.28rem;color: #365899;" (click)="share('_FB')"></i>&nbsp;&nbsp;
+                            <i class="pi pi-fw pi-twitter" style="font-size: 1.28rem;color: #1d9bf0;" (click)="share('_TW')"></i>&nbsp;&nbsp;
+                            <i class="pi pi-fw pi-whatsapp" style="font-size: 1.28rem;color: #449e48;" (click)="share('_WA')"></i>&nbsp;&nbsp;
                             <i class="pi pi-fw pi-send" style="font-size: 1.28rem;color: #1a8ad5;" (click)="share('_TG')"></i>
                         </span>
                     </div>
+                    
                 </div>
             </div>
             <div class="col-12 bdr-horizontal-light"></div>
+            <!-- <label>Text Size</label>&nbsp;
+            <button (click)="size = size + 1">+</button>&nbsp;
+            <button (click)="size = size - 1">-</button> -->
             <div class="grid grid-center">
-                <div class="col-10 news-content-small no-pad" [innerHTML]="newsDetail">
+                <div class="col-12 news-content-small font-short no-pad" [ngStyle]="{'font-size': size + 'px'}" [innerHTML]="newsDetail">
                 </div>
             </div>
             <div>
