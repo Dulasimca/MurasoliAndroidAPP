@@ -1,0 +1,82 @@
+<div *ngIf="hideContent" class="col-12 md:col-12 lg:col-12" style="padding: 0; position: fixed;">
+  <div class="col-12 md:col-12 lg:col-12" style="background-image: url('aassets/gif/white.jpg');">
+  </div>
+  <div class="col-12 txt-ctr">
+    <img src="assets/gif/murasolilogo.png" style="max-width: 200px; margin-top: 12rem;">
+  </div>
+  <p-blockUI [blocked]="loader">
+    <p-progressSpinner class="spinner" strokeWidth="4" *ngIf="loader"></p-progressSpinner>
+  </p-blockUI>
+</div>
+<div *ngIf="!hideContent" class="col-12 md:col-12 lg:col-12 bgimg">
+  <div class="col-12 md:col-12 lg:col-12">
+  <div class="col-12 md:col-12 lg:col-12">
+    <div class="grid">
+  <!-- <div class="col-12 md:col-12 lg:col-8">
+    <img src="assets/gif/kalaignar.jpg" style="border-radius: 48%;width: 70px;
+    height: 85px;">&nbsp;
+     <img src="assets/gif/Murasoli_Maran.jpeg" style="border-radius: 48%;width: 70px;
+     height: 85px;">&nbsp;
+       <img src="assets/gif/stalin.jpg" style="border-radius: 48%;width: 70px;
+       height: 85px;">&nbsp;
+          <img src="assets/gif/udstalin.jpg" style="width: 70px;
+          height: 85px;border-radius: 48%;">
+  </div> -->
+  
+    <!-- <div class="col-12 md:col-12 lg:col-4" style="text-align: end; margin-top: -1.7rem;">
+    <img src="assets/gif/dmkicon.jpg" style="width: 120px;
+    height: 120px;border-radius: 48%;">
+    </div> -->
+    </div>
+  </div>
+  <!-- <video class="col-12 md:col-12 lg:col-12 no-pad" autoplay muted>
+    <source src="assets/gif/skygif.mp4" type="video/mp4">
+  </video> -->
+  <!-- <canvas id="confetti"></canvas> -->
+  <div class="col-12 md:col-12 lg:col-12">
+  <div class="col-12 md:col-12 lg:col-12">
+    <!-- <div class="grid"> -->
+      <div class="col-12 md:col-12 lg:col-12 txt-ctr">
+      <img src="assets/gif/murasolilogo.png" style="width: 85px;background: white;
+      border-radius: 50%; margin-bottom:-15px;">
+      </div>
+      <div class="col-12 md:col-12 lg:col-12 txt-ctr" style="font-weight: 900;
+      font-size: 32px;
+      color: #bd0000;
+      font-family: Tam-Kamban;
+      letter-spacing: 2px;">முரசொலி</div> 
+    <!-- </div> -->
+  </div>
+<div class="count-down-timer">
+    <p class="waviy">
+       <span style="--i:1">வி</span>
+      <span style="--i:2">ரை</span>
+      <span style="--i:3">வி</span>
+      <span style="--i:4">ல் !!!</span>
+    </p>
+    <div class="col-12 md:col-12 lg:col-12">
+      <div class="grid wrapper">
+        <p style="font-size: 13px;">நாட்கள்</p>
+        <p style="font-size: 13px;">மணிநேரம்</p>
+        <p style="font-size: 13px;">நிமிடம் </p>
+        <p style="font-size: 13px;">நொடிகள்</p>
+      </div>
+      <div style="font-size: 3rem;" class="grid time">
+        <p class="neon">{{days}}</p>
+        <p class="neon">{{hours}}</p>
+        <p class="neon">{{minutes}}</p>
+        <p class="neon">{{seconds}}</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="col-12 txt-ctr" style="font-weight: 900;
+  font-size: 28px;
+  font-family: elango-panchali;
+  letter-spacing: 2px;
+  
+  color: #ca0000;">இன்றைய செய்தி நாளைய வரலாறு!!!</div>
+  </div>
+  </div>
+
+  
