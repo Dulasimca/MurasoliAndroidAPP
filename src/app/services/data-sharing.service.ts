@@ -4,12 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataSharingService {
-  smallImgURL: string = 'https://murasoliadmin.devtesting.in/assets/layout/thump/';
-  PdfURL: string = 'https://murasoliadmin.devtesting.in/assets/layout/Newspapers/';
-  imgURL: string = 'https://murasoliadmin.devtesting.in/assets/layout/Documents/';
+  smallImgURL: string = 'https://admin.murasoli.in/assets/layout/thump/';
+  PdfURL: string = 'https://admin.murasoli.in/assets/layout/Newspapers/';
+  imgURL: string = 'https://admin.murasoli.in/assets/layout/Documents/';
   paperName: string = 'முரசொலி';
   //fileURL: string = "../../assets/layout/Newspapers/";
-  fileURL: string = 'https://murasoli.devtesting.in/assets/files/';
+  fileURL: string = 'https://murasoli.in/assets/files/';
  // fileURL: string = 'https://mrstest.avahan.net/';
   //fileURL: string = 'https://murasoliadmin.devtesting.in/assets/layout/thump/';
   //share social media url's

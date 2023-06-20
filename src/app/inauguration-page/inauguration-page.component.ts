@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import * as confetti from 'canvas-confetti';
 import { RestapiService } from '../services/restapi.service';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class InaugurationPageComponent implements OnInit {
   murasoliLogo: string = '';
   loader: boolean = false;
   hideContent : boolean = true;
-  constructor(private _router: Router, private restApiService: RestapiService) {
+  constructor(private _router: Router, private restApiService: RestapiService, private _authService: AuthService) {
     this.restApiService.get('InaugurationTargetDate/GetTargetDate').subscribe(res => {
       this.fixTargetDate = res.Table[0].targetdate
       // console.log(fixTargetDate,'vp')
@@ -37,6 +38,7 @@ export class InaugurationPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this._authService.home();
     this.loader = true;
     // this.imageOne = 'assets/gif/kalaignar.jpg';
     // this.imageTwo = 'assets/gif/Murasoli_Maran.jpeg';

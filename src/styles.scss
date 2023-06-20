@@ -730,3 +730,33 @@ color: #d11212 !important;
 
     
 }
+.bgimg {
+    background-image: url('assets/gif/dmkflag.jpg');
+    // height: 100vh;
+    // background-position: center;
+    background-size: cover;
+    width: 1500px;
+    height: 1018px;
+    position: fixed;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-image: linear-gradient(180deg, black, #c40000);
+}
+.waviy {
+    position: relative;
+  }
+  .waviy span {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    // text-transform: uppercase;
+    animation: flip 4s infinite;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+  }

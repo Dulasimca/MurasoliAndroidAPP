@@ -19,6 +19,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { TableModule } from 'primeng/table';
 import {CardModule} from 'primeng/card';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { BlockUIModule } from 'primeng/blockui';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -58,7 +59,8 @@ import { PanelModule } from 'primeng/panel';
 import { PathipuMobileComponent } from './pathipu-mobile/pathipu-mobile.component';
 import { NewsMobileComponent } from './news-mobile/news-mobile.component';
 import { SearchComponent } from './search/search.component';
-
+import { InaugurationPageComponent } from './inauguration-page/inauguration-page.component';
+import { AsyncPipe } from '../../node_modules/@angular/common';
 
 @NgModule({
   declarations: [
@@ -88,6 +90,7 @@ import { SearchComponent } from './search/search.component';
     PathipuMobileComponent,
     NewsMobileComponent,
     SearchComponent,
+    InaugurationPageComponent,
     
   ],
   imports: [
@@ -115,10 +118,11 @@ import { SearchComponent } from './search/search.component';
     AccordionModule,
     ProgressSpinnerModule,
     SkeletonModule,
-    PanelModule
+    PanelModule,
+    BlockUIModule,
   ],
   entryComponents: [],
-  providers: [AuthService, RestapiService, DatePipe, DataSharingService, Converter, AuthGuard, NewsService, MessageService],
+  providers: [AuthService, RestapiService, DatePipe, DataSharingService, Converter, AuthGuard, NewsService, MessageService,AsyncPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -26,9 +26,11 @@ import { NewsMobileComponent } from './news-mobile/news-mobile.component';
 import { SearchComponent } from './search/search.component';
 import { ScrollerToType } from 'primeng/scroller';
 import { ScrollModeType } from 'ngx-extended-pdf-viewer';
+import { InaugurationPageComponent } from './inauguration-page/inauguration-page.component';
+
 
 const routes: Routes = [
-    { path: '',   redirectTo: '/home', pathMatch: 'full' },
+    { path: '',   redirectTo: '/inauguration-page', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'reader', component: PaperReaderComponent },
     { path: 'news', component: NewsComponent },
@@ -53,6 +55,7 @@ const routes: Routes = [
     {path: 'pathipumobile', component:PathipuMobileComponent},
     {path: 'newsmobile', component:NewsMobileComponent},
     {path: 'search', component:SearchComponent},
+    {path: 'inauguration-page', component:InaugurationPageComponent}
     
     
 

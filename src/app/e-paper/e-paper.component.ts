@@ -53,7 +53,7 @@ export class EPaperComponent implements OnInit {
   pageChange($event: any) { this.exportAsText($event); };
 
   ngOnInit(): void {
-  window.open("https://mrstest.avahan.net/","_blank");
+  window.open("https://epaper.murasoli.in/","_blank");
 
     // this._newsService.getDistrict();
     //  this.murasolipdffilepath =this._dataSharing.fileURL;
